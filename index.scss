@@ -7,6 +7,121 @@ $DarkGray: #a1a1a1;
 $VeryDarkGray: #454545;
 
 * {
-  @apply text-xs font-medium;
+  @apply font-medium;
   font-family: 'League Spartan', sans-serif;
+}
+
+body {
+  @apply min-h-screen;
+
+  header {
+    @apply absolute flex w-full justify-center py-12 px-6;
+
+    button {
+      @apply absolute top-12 left-6 z-[2] h-[14px] w-5 bg-no-repeat;
+      background-image: url('./assets/icon-hamburger.svg') !important;
+
+      &.active {
+        background-image: url('./assets/icon-close.svg') !important;
+      }
+    }
+
+    img {
+      @apply z-[1];
+    }
+
+    nav {
+      @apply absolute top-0 -left-full z-[1] flex h-full w-full items-center justify-end gap-8 bg-white px-6 transition-all duration-300;
+      &.active {
+        @apply left-0;
+      }
+
+      a {
+        @apply text-base font-bold lowercase;
+      }
+    }
+  }
+
+  main {
+    .slide {
+      @apply w-full shrink-0;
+
+      &.slide--1 {
+        @apply transition-all duration-300;
+        margin-left: 0;
+
+        &.active-2 {
+          margin-left: -100% !important;
+        }
+        &.active-3 {
+          margin-left: -200% !important;
+        }
+      }
+    }
+
+    #hero {
+      @apply relative flex w-full overflow-hidden;
+
+      .buttons {
+        @apply absolute bottom-0 right-0 flex;
+
+        button {
+          @apply flex h-14 w-14 items-center justify-center bg-black;
+
+          img {
+            @apply h-4;
+          }
+        }
+      }
+
+      .slide {
+        #hero-img--mobile {
+          @apply w-full;
+        }
+        #hero-img--desktop {
+          @apply hidden;
+        }
+      }
+    }
+
+    #main {
+      .slides {
+        @apply flex w-full overflow-hidden;
+
+        .slide {
+          @apply py-20 px-8 pb-4;
+
+          h1 {
+            @apply mb-3 text-4xl font-bold;
+          }
+
+          p {
+            @apply text-[15px] text-DarkGray;
+          }
+        }
+      }
+
+      a {
+        @apply ml-8 mb-20 flex items-center gap-8 uppercase tracking-[.5rem];
+      }
+    }
+
+    #about {
+      img {
+        @apply w-full;
+      }
+
+      .about-text {
+        @apply px-8 py-[52px];
+
+        h2 {
+          @apply mb-3 text-base font-bold uppercase tracking-[.2rem];
+        }
+
+        p {
+          @apply text-[15px] text-DarkGray;
+        }
+      }
+    }
+  }
 }
