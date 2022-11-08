@@ -50,3 +50,11 @@ btnNextMobile.addEventListener('click', () => {
   changeActiveSection('increase')
   updateSlides()
 })
+btnPrev.addEventListener('click', () => {
+  changeActiveSection('decrease')
+  updateSlides()
+})
+btnNext.addEventListener('click', () => {
+  changeActiveSection('increase')
+  updateSlides()
+})
